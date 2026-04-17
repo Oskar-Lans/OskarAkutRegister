@@ -340,6 +340,7 @@
             this.label9.Size = new System.Drawing.Size(123, 20);
             this.label9.TabIndex = 18;
             this.label9.Text = "Antal Varningar:";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 

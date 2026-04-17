@@ -96,12 +96,13 @@ namespace OskarAkutRegister
             try
             {
                 int test = Int32.Parse(Prioritering.Text.ToString());
+                test = Int32.Parse(textBox3.Text.ToString());
                 succes = true;
             }
             catch
             {
                 succes = false;
-                MessageBox.Show("Du får inte ha bokstäver i prioreterings listan!","Patient",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Du får inte ha bokstäver i prioreterings listan eller åldern!","Patient",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             if(succes == true)
             {
@@ -222,13 +223,15 @@ namespace OskarAkutRegister
             {
                listView1.BeginUpdate();
                 int merPrio = 0;
-                if (Patients[i].väntetid > maxvänt)
+                int personligMaxvänt = maxvänt / (Int32.Parse((Patients[i].ålder)) / 10);
+                int persongligFörlänge = förlängetid / (Int32.Parse((Patients[i].ålder)) / 10);
+                if (Patients[i].väntetid > personligMaxvänt)
                 {
                     listView1.Items[i].BackColor = Color.Red;
                     väntatFörlänge++;
                     merPrio += 2;
                 }
-                else if (Patients[i].väntetid > förlängetid)
+                else if (Patients[i].väntetid > persongligFörlänge)
                 {
                     listView1.Items[i].BackColor = Color.Orange;
                     väntatFörlänge++;
@@ -332,13 +335,15 @@ namespace OskarAkutRegister
                 sortedPatients.Add(patients[i]);   
                 ListViewItem lvi = new ListViewItem();
                 int merPrio = 0;
-                if (patients[i].väntetid > maxvänt)
+                int personligMaxvänt = maxvänt / (Int32.Parse((patients[i].ålder))/10);
+                int persongligFörlänge = förlängetid / (Int32.Parse((patients[i].ålder))/10);
+                if (patients[i].väntetid > personligMaxvänt)
                 {
                     lvi.BackColor = Color.Red;
                     väntatFörlänge++;
                     merPrio += 2;
                 }
-                else if (patients[i].väntetid > förlängetid)
+                else if (patients[i].väntetid > persongligFörlänge)
                 {
                     lvi.BackColor = Color.Orange;
                     merPrio++;
@@ -407,6 +412,11 @@ namespace OskarAkutRegister
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }
