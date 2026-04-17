@@ -405,6 +405,11 @@ namespace OskarAkutRegister
             File.WriteAllText(@"C:\Users\osla08001\Desktop\Lösenetc\behandlade.txt", "");
             Behandlade();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class Patient

@@ -273,6 +273,7 @@
             this.listView1.Size = new System.Drawing.Size(403, 206);
             this.listView1.TabIndex = 12;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // button7
             // 
@@ -372,6 +373,7 @@
             // button10
             // 
             this.button10.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button10.Cursor = System.Windows.Forms.Cursors.No;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button10.Location = new System.Drawing.Point(1063, 88);
             this.button10.Name = "button10";
@@ -383,6 +385,7 @@
             // button11
             // 
             this.button11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button11.Cursor = System.Windows.Forms.Cursors.No;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button11.Location = new System.Drawing.Point(945, 88);
             this.button11.Name = "button11";
@@ -394,6 +397,7 @@
             // button12
             // 
             this.button12.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button12.Cursor = System.Windows.Forms.Cursors.No;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button12.Location = new System.Drawing.Point(870, 88);
             this.button12.Name = "button12";
@@ -405,6 +409,7 @@
             // button13
             // 
             this.button13.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button13.Cursor = System.Windows.Forms.Cursors.No;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button13.Location = new System.Drawing.Point(795, 88);
             this.button13.Name = "button13";
