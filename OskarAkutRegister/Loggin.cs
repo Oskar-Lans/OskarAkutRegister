@@ -135,9 +135,10 @@ namespace OskarAkutRegister
         {
             if(showPass == true)
                 showPass = false;
-            else
+            else if(showPass == false)
                 showPass = true;
-                textBox1.UseSystemPasswordChar = !showPass;
+
+            textBox1.UseSystemPasswordChar = !showPass;
         }
     }
 }
