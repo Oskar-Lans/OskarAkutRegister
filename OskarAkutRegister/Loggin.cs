@@ -64,7 +64,7 @@ namespace OskarAkutRegister
             }
             else
             {
-                label4.Text = "DU måste fylla i personnummer och lösenord";
+                label4.Text = "Du måste fylla i personnummer och lösenord";
 
             }
 
@@ -74,6 +74,7 @@ namespace OskarAkutRegister
         {
             if (textBox1.Text != "" && textBox2.Text != "")
             {
+                
                 string pN = textBox2.Text.ToString();
                 string lN = textBox1.Text.ToString();
                 string inlog = (pN + "^" + lN);
@@ -140,5 +141,7 @@ namespace OskarAkutRegister
 
             textBox1.UseSystemPasswordChar = !showPass;
         }
+
+      
     }
 }
