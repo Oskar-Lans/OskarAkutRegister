@@ -62,6 +62,10 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -324,11 +328,11 @@
             // 
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.button8.Location = new System.Drawing.Point(964, 301);
+            this.button8.Location = new System.Drawing.Point(884, 297);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(92, 26);
             this.button8.TabIndex = 17;
-            this.button8.Text = "Rensa";
+            this.button8.Text = "Rensa Allt";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -363,6 +367,7 @@
             // button9
             // 
             this.button9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button9.Cursor = System.Windows.Forms.Cursors.No;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button9.Location = new System.Drawing.Point(1117, 88);
             this.button9.Name = "button9";
@@ -428,11 +433,55 @@
             this.label12.TabIndex = 26;
             this.label12.Text = "0";
             // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(1097, 406);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(105, 32);
+            this.button14.TabIndex = 27;
+            this.button14.Text = "Logga ut";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button15
+            // 
+            this.button15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.button15.Location = new System.Drawing.Point(1007, 297);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(92, 26);
+            this.button15.TabIndex = 28;
+            this.button15.Text = "Spara Allt";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(913, 329);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(161, 26);
+            this.textBox1.TabIndex = 29;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label13.Location = new System.Drawing.Point(915, 358);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(213, 20);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "text namn tex behandlade.txt";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1214, 450);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button15);
+            this.Controls.Add(this.button14);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button10);
@@ -501,6 +550,10 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label13;
     }
 }
 

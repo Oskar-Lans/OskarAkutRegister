@@ -24,6 +24,8 @@ namespace OskarAkutRegister
 
         public int varningar = 0;
 
+        public string sparadeBehandledePos = "";
+
         public List<string> Sympton = new List<string>()
         {
             "Andningssvårigheter",
@@ -48,7 +50,7 @@ namespace OskarAkutRegister
 
         int förlängetid = 10 * 60;
         int maxvänt = 40 * 60;
-
+        string dag = "";
         public List<ListViewItem> lvil = new List<ListViewItem>();
         public Form1()
         {
@@ -70,7 +72,8 @@ namespace OskarAkutRegister
             listView2.Columns.Add("             Sympton               ", -2, HorizontalAlignment.Left);
             listView2.Columns.Add("Prio", -2, HorizontalAlignment.Left);
             listView2.Columns.Add("Tid", -2, HorizontalAlignment.Left);
-
+            dag = DateTime.Today.DayOfWeek.ToString() + "_" + DateTime.Today.Month +"_"+ DateTime.Today.Day.ToString();
+            textBox1.Text = dag;
             
 
             try
@@ -284,7 +287,7 @@ namespace OskarAkutRegister
             try
             {
                 listView2.Items.Clear();
-                string person = File.ReadAllText(@"C:\Users\osla08001\Desktop\Lösenetc\behandlade.txt".ToString());
+                string person = File.ReadAllText("Behandlade.txt".ToString());
                 string[] indPerson = person.Split('\n','\n');
                 
 
@@ -389,7 +392,7 @@ namespace OskarAkutRegister
                     if (Patients[i] == sortedPatients[listView1.SelectedItems[0].Index])
                     {
                     string behandladinfo = sortedPatients[listView1.SelectedItems[0].Index].namn + "^" + sortedPatients[listView1.SelectedItems[0].Index].ålder + "^" + sortedPatients[listView1.SelectedItems[0].Index].sympton + "^" + sortedPatients[listView1.SelectedItems[0].Index].prio + "^" + sortedPatients[listView1.SelectedItems[0].Index].väntetid + "^";
-                    File.AppendAllText(@"C:\Users\osla08001\Desktop\Lösenetc\behandlade.txt", behandladinfo + Environment.NewLine);
+                    File.AppendAllText("Behandlade.txt", behandladinfo + Environment.NewLine);
                     listView1.SelectedItems[0].Remove();
                     Behandlade();
                     
@@ -407,7 +410,7 @@ namespace OskarAkutRegister
 
         private void button8_Click(object sender, EventArgs e)
         {
-            File.WriteAllText(@"C:\Users\osla08001\Desktop\Lösenetc\behandlade.txt", "");
+            File.WriteAllText("Behandlade.txt", "");
             Behandlade();
         }
 
@@ -419,6 +422,49 @@ namespace OskarAkutRegister
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+
+            string behandlade = File.ReadAllText("Behandlade.txt");
+            string[] rader = behandlade.Split('\n');
+            string behandladeInfo = "Namn   Ålder   Sympton  Prio  Väntetid(s) \n";
+            
+            for(int i = 0; i < rader.GetLength(0); i++)
+            {
+                string[] allt = rader[i].Split('^');
+                rader[i] = "";
+                for(int j = 0; j < allt.GetLength(0); j++)
+                {
+                    rader[i] += "  " + allt[j];
+                }
+                behandladeInfo += rader[i] + "\n";
+            }
+
+            File.WriteAllText(sparadeBehandledePos,behandladeInfo);
+            MessageBox.Show(sparadeBehandledePos + " kunde inte hittas, skapar ny", "info",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
+
+
+            
+            MessageBox.Show("Patienterna har exporterats","Exportering",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            Loggin log = new Loggin();
+            log.Show();
+            this.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            sparadeBehandledePos = textBox1.Text.ToString();
+            if (sparadeBehandledePos.EndsWith(".txt"))
+                return;
+            else
+                sparadeBehandledePos += ".txt";
         }
     }
 
