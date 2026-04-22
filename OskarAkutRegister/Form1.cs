@@ -72,6 +72,7 @@ namespace OskarAkutRegister
             listView2.Columns.Add("             Sympton               ", -2, HorizontalAlignment.Left);
             listView2.Columns.Add("Prio", -2, HorizontalAlignment.Left);
             listView2.Columns.Add("Tid", -2, HorizontalAlignment.Left);
+            
             if(DateTime.Now.Hour >= 12)
                 dag = DateTime.Today.Month + "_" + DateTime.Today.Day.ToString() + "_" + DateTime.Today.DayOfWeek.ToString() + "_Förmiddag_" + DateTime.Now.Hour;
             else
