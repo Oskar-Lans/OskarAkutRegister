@@ -73,9 +73,9 @@ namespace OskarAkutRegister
             listView2.Columns.Add("Prio", -2, HorizontalAlignment.Left);
             listView2.Columns.Add("Tid", -2, HorizontalAlignment.Left);
             if(DateTime.Now.Hour >= 12)
-                dag = DateTime.Today.DayOfWeek.ToString() + "_" + DateTime.Today.Month + "_" + DateTime.Today.Day.ToString() +"_Förmiddag_" + DateTime.Now.Hour;
+                dag = DateTime.Today.Month + "_" + DateTime.Today.Day.ToString() + "_" + DateTime.Today.DayOfWeek.ToString() + "_Förmiddag_" + DateTime.Now.Hour;
             else
-                dag = DateTime.Today.DayOfWeek.ToString() + "_" + DateTime.Today.Month + "_" + DateTime.Today.Day.ToString() + "_Eftermiddag_" + DateTime.Now.Hour;
+                dag = DateTime.Today.Month + "_" + DateTime.Today.Day.ToString()+ "_" + DateTime.Today.DayOfWeek.ToString() + "_Eftermiddag_" + DateTime.Now.Hour;
             textBox1.Text = dag;
             
 

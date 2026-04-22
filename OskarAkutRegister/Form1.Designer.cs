@@ -457,9 +457,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(913, 329);
+            this.textBox1.Location = new System.Drawing.Point(884, 329);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 26);
+            this.textBox1.Size = new System.Drawing.Size(215, 26);
             this.textBox1.TabIndex = 29;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -467,7 +467,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label13.Location = new System.Drawing.Point(915, 358);
+            this.label13.Location = new System.Drawing.Point(916, 358);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(213, 20);
             this.label13.TabIndex = 30;
