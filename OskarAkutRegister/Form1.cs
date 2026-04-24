@@ -335,9 +335,6 @@ namespace OskarAkutRegister
 
             }
         }
-
-
-        
         
         
         public void writeKölista(List<Patient> patients)
@@ -481,7 +478,7 @@ namespace OskarAkutRegister
                 sparadeBehandledePos += ".txt";
         }
     }
-
+    
     public class Patient
     {
         public string namn;
