@@ -73,7 +73,7 @@ namespace OskarAkutRegister
             listView2.Columns.Add("Prio", -2, HorizontalAlignment.Left);
             listView2.Columns.Add("Tid", -2, HorizontalAlignment.Left);
             
-            if(DateTime.Now.Hour >= 12)
+            if(DateTime.Now.Hour <= 12)
                 dag = DateTime.Today.Month + "_" + DateTime.Today.Day.ToString() + "_" + DateTime.Today.DayOfWeek.ToString() + "_Förmiddag_" + DateTime.Now.Hour;
             else
                 dag = DateTime.Today.Month + "_" + DateTime.Today.Day.ToString()+ "_" + DateTime.Today.DayOfWeek.ToString() + "_Eftermiddag_" + DateTime.Now.Hour;
@@ -230,8 +230,14 @@ namespace OskarAkutRegister
             {
                listView1.BeginUpdate();
                 int merPrio = 0;
-                int personligMaxvänt = maxvänt / (Int32.Parse((Patients[i].ålder)) / 10);
-                int persongligFörlänge = förlängetid / (Int32.Parse((Patients[i].ålder)) / 10);
+                int personligMaxvänt = maxvänt;
+
+                int persongligFörlänge = förlängetid;
+                if ((Int32.Parse(Patients[i].ålder) > 25))
+                {
+                    personligMaxvänt = maxvänt / (Int32.Parse((Patients[i].ålder)) / 10);
+                    persongligFörlänge = förlängetid / (Int32.Parse((Patients[i].ålder)) / 10);
+                }
                 if (Patients[i].väntetid > personligMaxvänt)
                 {
                     listView1.Items[i].BackColor = Color.Red;
@@ -342,8 +348,14 @@ namespace OskarAkutRegister
                 sortedPatients.Add(patients[i]);   
                 ListViewItem lvi = new ListViewItem();
                 int merPrio = 0;
-                int personligMaxvänt = maxvänt / (Int32.Parse((patients[i].ålder))/10);
-                int persongligFörlänge = förlängetid / (Int32.Parse((patients[i].ålder))/10);
+                int personligMaxvänt = maxvänt;
+
+                int persongligFörlänge = förlängetid;
+                if ((Int32.Parse(patients[i].ålder) > 25)){
+                    personligMaxvänt = maxvänt / (Int32.Parse((patients[i].ålder)) / 10);
+                    persongligFörlänge = förlängetid / (Int32.Parse((patients[i].ålder)) / 10);
+                }
+               
                 if (patients[i].väntetid > personligMaxvänt)
                 {
                     lvi.BackColor = Color.Red;
